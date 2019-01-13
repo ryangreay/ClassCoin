@@ -1,0 +1,92 @@
+﻿@model ClassCoin.ViewModels.InstructorRegistrationViewModel
+@{
+    Layout = null;
+}
+<div id="instructor-signup-form">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <span class="@(ViewBag.RegisterSuccess == true ? Html.Raw("text-success") : Html.Raw("text-danger"))">@ViewBag.Message</span>
+    <div class="container-fluid" style="padding-left:0px; padding-right:0px;">
+        <div class="row">
+            <div class="col">
+                <div class="form-group mb-3">
+                    <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="ni ni-single-02"></i>
+                            </span>
+                        </div>
+                        @Html.TextBoxFor(model => model.Firstname,
+                            htmlAttributes: new { @class = "form-control", @placeholder = "Firstname" })
+                    </div>
+                    <small>@Html.ValidationMessageFor(model => model.Firstname, "", htmlAttributes: new { @class = "text-danger" })</small>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="ni ni-single-02"></i>
+                            </span>
+                        </div>
+                        @Html.TextBoxFor(model => model.Lastname,
+                            htmlAttributes: new { @class = "form-control", @placeholder = "Lastname" })
+                    </div>
+                    <small>@Html.ValidationMessageFor(model => model.Lastname, "", htmlAttributes: new { @class = "text-danger" })</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="ni ni-email-83"></i>
+                </span>
+            </div>
+            @Html.TextBoxFor(model => model.Email,
+                htmlAttributes: new { @class = "form-control", @placeholder = "Email", @type = "email" })
+        </div>
+        <small>@Html.ValidationMessageFor(model => model.Email, "", htmlAttributes: new { @class = "text-danger" })</small>
+    </div>
+    <div class="form-group">
+        <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="ni ni-building"></i>
+                </span>
+            </div>
+            @Html.TextBoxFor(model => model.Institution,
+                htmlAttributes: new { @class = "form-control", @placeholder = "School name" })
+        </div>
+        <small>@Html.ValidationMessageFor(model => model.Institution, "", htmlAttributes: new { @class = "text-danger" })</small>
+    </div>
+    <div class="form-group">
+        <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="ni ni-lock-circle-open"></i>
+                </span>
+            </div>
+            @Html.TextBoxFor(model => model.Password,
+                htmlAttributes: new { @class = "form-control", @placeholder = "Password", @type = "password" })
+        </div>
+        <small>@Html.ValidationMessageFor(model => model.Password, "", htmlAttributes: new { @class = "text-danger" })</small>
+    </div>
+    <div class="form-group">
+        <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="ni ni-lock-circle-open"></i>
+                </span>
+            </div>
+            @Html.TextBoxFor(model => model.ConfirmPassword,
+                htmlAttributes: new { @class = "form-control", @placeholder = "Confirm Password", @type = "password" })
+        </div>
+        <small>@Html.ValidationMessageFor(model => model.ConfirmPassword, "", htmlAttributes: new { @class = "text-danger" })</small>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary my-4" value="Landing" type="submit">Sign up</button>
+    </div>
+</div>
