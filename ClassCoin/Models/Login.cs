@@ -6,9 +6,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ClassCoin.Models
 {
-    public class Login : IdentityUserLogin
-    {
-        public Login() : base() { }
+    //public class Login : IdentityUserLogin
+    //{
+    //    public Login() : base() { }
 
-    }
+    //}
 }

@@ -6,9 +6,9 @@ using System.Web;
 
 namespace ClassCoin.Models
 {
-    public class AppRole : IdentityRole
-    {
-        public AppRole() : base() { }
-        public AppRole(string name) : base(name) { }
-    }
+    //public class AppRole : IdentityRole
+    //{
+    //    public AppRole() : base() { }
+    //    public AppRole(string name) : base(name) { }
+    //}
 }

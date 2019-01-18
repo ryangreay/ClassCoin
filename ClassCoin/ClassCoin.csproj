@@ -240,6 +240,10 @@
     <Compile Include="Migrations\201901040349184_UserUpdates2.Designer.cs">
       <DependentUpon>201901040349184_UserUpdates2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901141956386_InitialIdentityIntegration.cs" />
+    <Compile Include="Migrations\201901141956386_InitialIdentityIntegration.Designer.cs">
+      <DependentUpon>201901141956386_InitialIdentityIntegration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Classroom.cs" />
     <Compile Include="Models\Group.cs" />
@@ -271,6 +275,7 @@
     <Content Include="Graphics\classcoin_header.png" />
     <Content Include="Graphics\class_coin_animation.gif" />
     <Content Include="Graphics\class_coin_header.png" />
+    <Content Include="Graphics\class_coin_header_dark.png" />
     <Content Include="Graphics\class_coin_logo.png" />
     <Content Include="Graphics\create_rewards.png" />
     <Content Include="Graphics\distribute_funds.png" />
@@ -325,6 +330,7 @@
     <Content Include="Views\Home\Confirm.cshtml" />
     <Content Include="Views\Home\EmailConfirmationTest.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
+    <Content Include="Views\Home\ResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -360,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901040349184_UserUpdates2.resx">
       <DependentUpon>201901040349184_UserUpdates2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901141956386_InitialIdentityIntegration.resx">
+      <DependentUpon>201901141956386_InitialIdentityIntegration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
