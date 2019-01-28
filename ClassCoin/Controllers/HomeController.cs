@@ -64,7 +64,14 @@ namespace ClassCoin.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult Signup()
+        public ActionResult StudentSignup()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult InstructorSignup()
         {
             return View();
         }
@@ -197,7 +204,7 @@ namespace ClassCoin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(loginVM);
+                return PartialView("Login_Partial");
             }
 
             // Require the user to have a confirmed email before they can log on.
@@ -229,7 +236,7 @@ namespace ClassCoin.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(loginVM);
+                    return PartialView("Login_Partial");
             }
         }
 

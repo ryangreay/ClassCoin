@@ -1,0 +1,46 @@
+﻿@model ClassCoin.ViewModels.LoginViewModel
+@{
+    Layout = null;
+}
+<div id="login-form">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <span class="text-danger">@ViewBag.Message</span>
+    <div class="form-group mb-3">
+        <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="ni ni-single-02"></i>
+                </span>
+            </div>
+            @Html.TextBoxFor(model => model.Username,
+                htmlAttributes: new { @class = "form-control", @placeholder = "Username / Email" })
+            @Html.ValidationMessageFor(model => model.Username, "", htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="margin-bottom:0rem;">
+        <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="ni ni-lock-circle-open"></i>
+                </span>
+            </div>
+            @Html.TextBoxFor(model => model.Password,
+                htmlAttributes: new { @class = "form-control", @placeholder = "Password", @type = "password" })
+            @Html.ValidationMessageFor(model => model.Password, "", htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div style="margin-bottom:1rem;">
+        @Html.ActionLink("Forgot Password?", "ForgotPassword", null, htmlAttributes: new { @class = "text-muted", @style = "font-size:12px" })
+    </div>
+    <div class="custom-control custom-control-alternative custom-checkbox">
+        @Html.CheckBoxFor(model => model.RememberMe,
+            htmlAttributes: new { @class = "custom-control-input", @id = "customCheckLogin", @type = "checkbox" })
+        <label class="custom-control-label" for="customCheckLogin">
+            <span class="text-muted">Remember Me</span>
+        </label>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary my-4" value="Landing" type="submit">Sign in</button>
+        <div id="loading" style="display:none;">Loading...</div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@model ClassCoin.ViewModels.SignupViewModel
+@{
+    ViewBag.Title = "Sign up";
+}
+<div class="header py-7 py-lg-8" style="padding-top:20px !important; background:linear-gradient(87deg,#5e72e4 0,#172b4d 100%) !important">
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h1 class="text-lighter text-center" style="padding-bottom:20px;">Register here!</h1>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+    <div class="separator separator-bottom separator-skew zindex-100">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 100" preserveAspectRatio="none meet" x="0" y="0" version="1.1">
+            <polygon class="fill-secondary" style="stroke-width:5;stroke:#f8f9fe;" points="3000,0 3000,100 0,100" />
+        </svg>
+    </div>
+</div>
+
+<div class="container-fluid" style="margin-top:-8rem;">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-4">
+            <div class="card shadow bg-secondary border-0">
+                <div class="card-body">
+                    <div class="card-header bg-transparent pb-5">
+                        <div class="text-muted text-center mt-2 mb-3">
+                            <small>Students sign up with</small>
+                        </div>
+                        <div class="btn-wrapper text-center">
+                            <a class="btn btn-neutral btn-icon" href="#">
+                                <span class="btn-inner--icon">
+                                    <img src="~/Graphics/google.svg" />
+                                </span>
+                                <span class="btn-inner--text">
+                                    Google
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-muted text-center mt-2 mb-3">
+                        <small>or Sign up with credentials</small>
+                    </div>
+                    @using (Ajax.BeginForm("StudentSignup", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "student-signup-form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Partial("StudentSignup_Partial")
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+    
